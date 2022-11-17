@@ -1,0 +1,228 @@
+//====================================================================================================
+// 
+.header {
+
+	&__menu {
+		// padding-left: rem(22);b
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: rem(40);
+		@include adaptiveValue("padding-top", 38, 20);
+		@media (max-width:$mobile){
+			justify-content: center;
+		}
+
+	}
+
+	&__logo {
+		margin-right: rem(20);
+
+	}
+}
+
+.menu__none{
+	@media (max-width:$mobile){
+		display: none; 
+	}
+}
+
+.menu {
+	position: relative;
+	z-index: 50;
+
+	&__icon {
+	}
+	
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		// justify-content:center;
+		align-items: center;
+		// @include adaptiveValue("padding-top", 38, 20);
+		@media (max-width:$mobile){
+            position: fixed;
+				@include adaptiveValue("font-size", 70, 30);
+            width: 100%; 
+            height: 100vh;
+            top: 0;
+            left: -100%;
+				justify-content:center;align-items: center;
+            
+            transition: all 0.3s ease 0s;
+            overflow: auto;
+            background: radial-gradient(104.76% 207.16% at 10.31% 90.28%, #FFFFFF 0%, #E3E3E3 100%);
+            // border-radius: 0px;
+            
+            .menu-open &{
+               
+					top: rem(0);
+					left: rem(0)
+               
+            }
+      }
+	}
+	
+	&__list {
+		display: flex;
+		align-items: center;
+		// column-gap: rem(87);
+		@include adaptiveValue("column-gap", 77, 20);
+		
+		color: #9D9D9D;
+
+		// font-family: 'Montserrat';
+		font-style: normal;
+		line-height: 17px;
+		@media (max-width:$mobile){
+			display: flex;
+			justify-content: center;
+			gap: rem(35);
+			
+			flex-direction: column;
+			height: 100%;
+		}
+	}
+
+	&__item {
+	}
+	
+	&__link {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: rem(15) 0;
+		transition: all .2s ease 0s;
+		border-bottom: #9d9d9d00 solid 1px;
+		@media (max-width:$mobile){
+			border-bottom: #9d9d9d00 solid 3px;
+		}
+
+		&:hover {
+			border-bottom: $colorContent solid 1px;
+			transition: all .2s ease 0s;
+			@media (max-width:$mobile){
+				border-bottom: $colorContent solid 3px;	
+	}
+		}
+		@media (max-width:$mobile){
+			// box-sizing: content-box;
+			line-height: 105%;
+			padding: 0;
+		}
+	}
+
+// 	&__link {
+// border-bottom: $colorContent solid 1px;
+// 	}
+	
+}
+.menu-button {
+	color: #fff;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	// line-height: 17px;
+	background-color: $colorContent;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 20px;
+	// padding: rem(11);
+	display: inline-block;
+	line-height: math.div(40, 14);
+	text-align: center;
+	min-width: rem(122);
+	transition: all .2s ease 0s;
+	// justify-content:center;
+	// align-items: center;
+	&:hover {
+		background-color: #bb3131;
+		transition: all .2s ease 0s;
+		}
+
+	@media (max-width:$mobile){
+		@include adaptiveValue("font-size", 40, 20);
+		padding: 0 rem(20);
+		margin-top: rem(40);
+	}
+	
+	
+}
+.icon-menu {
+}
+
+// .nav-list__item-link--active {
+// 	border-bottom: $colorContent solid 1px;
+// 	transition: all .2s ease 0s;
+// 	@media (max-width:$mobile){
+// 		border-bottom: $colorContent solid 3px;
+// 	}
+// }
+
+
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+
+	@media (max-width: $mobile) {
+		// margin-top: rem(37);
+		// margin-left: rem(15);
+		display: flex;
+		position: fixed;
+		// top: rem(34);
+		// @include adaptiveValue("top", 38, 20);
+		// @include adaptiveValue("padding", 25, 15);
+		// @include adaptiveValue("padding-top", 38, 20);
+		left: rem(34);
+		width: rem(45);
+		height: rem(24);
+		cursor: pointer;
+		z-index: 5;
+		
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			
+			width: 100%;
+			height: rem(2);
+			background-color: $mainColor;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			z-index: 999;
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+

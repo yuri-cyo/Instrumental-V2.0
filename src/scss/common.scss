@@ -1,0 +1,89 @@
+// Заголовки, общие БЄМ блоки и проче...
+//Menu/////////////
+
+
+
+
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: rem(18);
+    // line-height: 22px;
+    line-height: math.div(50, 20);
+    padding: 0 rem(45);
+    color: #E24040;
+    border: 2px solid #E24040;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background: none;
+    // padding: 14px 46px;
+    margin-top: 46px;
+    cursor: pointer;
+    transition: .3s;
+    
+
+    &:hover{
+        background-color: #E24040;
+        color: #FFFFFF;
+        transition: .3s;
+    }
+}
+
+.title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: rem(29);
+    color: $colorContent;
+    position: relative;
+    z-index: 1;
+
+    &::before{
+        // content: 'ОСОБЕННОСТИ';
+        color: $shadowTitleColor;
+        font-style: normal;
+        font-weight: 700;
+        font-size: rem(36);
+        line-height: rem(44);
+        position: absolute;
+        left: rem(-17);
+        bottom: rem(5);
+        z-index: -1;
+        @media (max-width: em(500)){
+            @include adaptiveValue("font-size", 40, 28);
+            left: 50%;
+            bottom: rem(10);
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.text-parent {
+    // font-size: rem(14);
+    @include adaptiveValue("font-size", 14, 12);
+    color: #7B7B7B;
+    @include adaptiveValue("padding-left", 40, 15);
+    border-left: 2px solid #E24040;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text {
+    // line-height: 25px;
+    line-height: 179%;
+    text-align: justify;
+
+    // &:not(:last-child) {
+    //     margin-bottom: 27px;
+    // }
+}
+
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

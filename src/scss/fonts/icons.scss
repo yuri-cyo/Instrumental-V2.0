@@ -1,0 +1,45 @@
+%ic {
+	font-family: "icomoon";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+		font-size: rem(20);
+	}
+}
+
+ 
+ ._icon-email:before {
+	content: "\e900";
+	color: #e24040;
+ }
+ ._icon-facebook:before {
+	content: "\e901";
+ }
+ ._icon-instagram:before {
+	content: "\e902";
+ }
+ ._icon-message:before {
+	content: "\e903";
+	color: #e24040;
+ }
+ ._icon-name:before {
+	content: "\e904";
+	color: #e24040;
+ }
+ ._icon-phone:before {
+	content: "\e905";
+	color: #e24040;
+ }
+ ._icon-telegram:before {
+	content: "\e906";
+ }
+ 
