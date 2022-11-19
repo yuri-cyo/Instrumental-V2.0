@@ -94,9 +94,9 @@
         
         h1{
             font-family: 'Russo One';
+            @include adaptiveValue("font-size", 64, 32);
             font-style: normal;
             font-weight: normal;
-            @include adaptiveValue("font-size", 64, 50);
             line-height: 77px;
             color: #E24040;
             padding: 0;
@@ -105,7 +105,6 @@
             z-index: 1;
             @media (max-width: $mobile){
                 text-align: center;
-                @include adaptiveValue("font-size", 100, 35);
             }
         
             &::after {
@@ -123,7 +122,7 @@
                 @media (max-width: em(1120)){
                     left: 50%;
                     transform: translateX(-50%);
-                    @include adaptiveValue("font-size", 60, 20);
+                    @include adaptiveValue("font-size", 60, 18);
                 }
                 
             }
@@ -174,16 +173,16 @@
             top: 0;
             right: 0;
             transform: translate(68.2%, -8.6%);
-            @include adaptiveValue("width", 900, 600);
-            @include adaptiveValue("height", 900, 600);
+            @include adaptiveValue("width", 900, 300);
+            @include adaptiveValue("height", 900, 300);
 
             @media (max-width:$tablet){
-                @include adaptiveValue("width", 900, 450);
-                @include adaptiveValue("height", 900, 450);
+                // @include adaptiveValue("width", 900, 450);
+                // @include adaptiveValue("height", 900, 450);
             }
             @media (max-width:$mobile){
-                @include adaptiveValue("width", 900, 300);
-                @include adaptiveValue("height", 900, 300);
+                // @include adaptiveValue("width", 900, 300);
+                // @include adaptiveValue("height", 900, 300);
                 border: rem(90) solid #E24040;
                 transform: translate(52.2%, 5%);
             }
@@ -303,16 +302,18 @@
             top: 0;
             left: 0;
             transform: translate(-71.6%, -11.1%);
-            @include adaptiveValue("width", 700, 600);
-            @include adaptiveValue("height", 700, 600);
+            @include adaptiveValue("width", 700, 270);
+            @include adaptiveValue("height", 700, 270);
 
             @media (max-width:$tablet){
-                @include adaptiveValue("width", 700, 450);
-                @include adaptiveValue("height", 700, 450);
+                // @include adaptiveValue("width", 700, 450);
+                // @include adaptiveValue("height", 700, 450);
             }
             @media (max-width:$mobile){
-                @include adaptiveValue("width", 700, 300);
-                @include adaptiveValue("height", 700, 300);
+                // @include adaptiveValue("width", 700, 300);
+                // @include adaptiveValue("height", 700, 300);
+                // height: rem(300);
+                // width: rem(300);
                 border: rem(90) solid #E24040;
                 transform: translate(-60%, -50%);
                 top: 50%;
@@ -496,7 +497,7 @@
             &::before{
                 content: '';
                 position: absolute;
-                background: url(../img/_icon-round.svg) no-repeat;   
+                background: url(@img/pagination-active.svg) no-repeat;   
 
                 // border: 2px solid #E24040;
                 width: 24px;
@@ -805,7 +806,7 @@
             &::before{
                 content: '';
                 position: absolute;
-                background: url(../img/_icon-round.svg) no-repeat;   
+                background: url(../img/pagination-active.svg) no-repeat;   
 
                 // border: 2px solid #E24040;
                 width: 24px;
