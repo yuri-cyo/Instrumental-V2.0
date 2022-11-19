@@ -94,7 +94,7 @@
         
         h1{
             font-family: 'Russo One';
-            @include adaptiveValue("font-size", 64, 32);
+            @include adaptiveValue("font-size", 64, 3);
             font-style: normal;
             font-weight: normal;
             line-height: 77px;
@@ -956,6 +956,7 @@
             background: none;
             border: none;
             outline: none;
+            border-radius: none;
             border-bottom: 2px solid $colorContent;
             // &::placeholder{
             //     font-weight: 400;
